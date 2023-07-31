@@ -1,0 +1,16 @@
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        s = "1"
+        for k in range(1,n):
+            i = 0
+            next = ""
+            
+            while i<len(s):
+                count = 1
+                while i<len(s)-1 and s[i] == s[i+1]:
+                    count+=1
+                    i+=1
+                next += str(count)+s[i]
+                i+=1
+            s = next
+        return s

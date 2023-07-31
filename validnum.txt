@@ -1,0 +1,10 @@
+class Solution:
+    def isNumber(self, s: str) -> bool:
+        try:
+            float(s)
+        except ValueError:
+            return False
+        else:
+            if 'inf' in s.lower():
+                return False
+            return True
